@@ -8,7 +8,7 @@ export default function App() {
 
 
       <View style={styles.upperCase}>
-        <TextInput style={styles.input}/>
+        <TextInput style={styles.input} placeholder='Metin girin'/>
       </View>
 
 
@@ -21,11 +21,11 @@ export default function App() {
       </View>
 
       <View style={styles.lowerCase}>
-      <TextInput style={styles.output}/>
+      <TextInput style={styles.output} placeholder='𐰓𐰭𐰢𐰀'/>
       </View>
 
       <View style={styles.otherElementZ}>
-         <Text>Copy</Text>
+         
       </View>
 
     </View>
@@ -63,10 +63,14 @@ const styles = StyleSheet.create({
     height: 70,
   },
   input:{
-    backgroundColor:"red",
+    fontSize:25,
+    marginTop:35,
+    marginLeft:22,
   },
   output:{
-    backgroundColor:"yellow",
+    fontSize:25,
+    marginTop:35,
+    marginRight:22,
   }
 
 });
