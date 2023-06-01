@@ -14,6 +14,7 @@ const Tab = createBottomTabNavigator();
 function Tabs() {
   return (
     <Tab.Navigator
+     initialRouteName='Info'
       screenOptions={{
         tabBarShowLabel: false,
         headerShown: false,
@@ -43,13 +44,12 @@ function Tabs() {
                 source={require('../assets/home.png')}
                 resizeMode="contain"
                 style={{
-                  backgroundColor: 'red',
                   width: 25,
                   height: 25,
                   tintColor: focused ? 'red' : 'gray',
                 }}
               />
-              <Text style={{ color: focused ? 'red' : 'white' }}>𐰔</Text>
+              <Text style={{ color: focused ? 'red' : 'white' }}>Help</Text>
             </View>
           ),
         }}
