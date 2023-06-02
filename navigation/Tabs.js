@@ -1,6 +1,6 @@
-import React from 'react';
+import React, { useState, useEffect } from 'react';
 import { createBottomTabNavigator } from '@react-navigation/bottom-tabs';
-import { View, StyleSheet, Text, Image } from 'react-native';
+import { View, StyleSheet, Text, Image, Keyboard, KeyboardAvoidingView, Platform } from 'react-native';
 
 import Help from "../screens/Help";
 import Home from "../screens/Home";
@@ -9,16 +9,14 @@ import Info from "../screens/Info";
 const Tab = createBottomTabNavigator();
 
 
-
-
 function Tabs() {
   return (
     <Tab.Navigator
-     initialRouteName='Info'
+      initialRouteName='Home'
       screenOptions={{
         tabBarShowLabel: false,
         headerShown: false,
-    
+        tabBarHideOnKeyboard: true,
         tabBarStyle: {
           position: 'absolute',
           bottom: 25,
@@ -32,9 +30,6 @@ function Tabs() {
         },
       }}
     >
-
-  
-
 
       <Tab.Screen name="help" component={Help}
         options={{

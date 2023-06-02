@@ -1,6 +1,7 @@
 import React from 'react';
 import { View, StyleSheet, Text, Button, Image, ScrollView } from 'react-native';
 
+
 const Info = ({ navigation }) => {
     return (
         <View style={styles.container}>
@@ -65,15 +66,9 @@ const Info = ({ navigation }) => {
                     />
 
                     <Text style={styles.p}>
-                        𐰶 sadece "I" dan önce veya sonra, "ık" veya "kı" sesleri vermesi için kullanılır.
-                        𐰸 sadece "O" ve "U" dan önce veya sonra, "ok/uk" veya "ko/ku" sesleri vermesi için kullanılır.
-                        𐰰 sadece "Ö" ve "Ü" dan önce veya sonra, "ök/ük" veya "kö/kü" sesleri vermesi için kullanılır.
-
-
-
-
-
-                        
+                        sadece "I" dan önce veya sonra, "ık" veya "kı" sesleri vermesi için kullanılır.
+                        sadece "O" ve "U" dan önce veya sonra, "ok/uk" veya "ko/ku" sesleri vermesi için kullanılır.
+                        sadece "Ö" ve "Ü" dan önce veya sonra, "ök/ük" veya "kö/kü" sesleri vermesi için kullanılır.
                     </Text>
 
                 </View>
@@ -85,6 +80,7 @@ const Info = ({ navigation }) => {
 const styles = StyleSheet.create({
     container: {
         flex: 1,
+        paddingBottom:120,
     },
     image1: {
         width: 240,

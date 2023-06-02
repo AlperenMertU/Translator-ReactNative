@@ -5,7 +5,9 @@ import Tabs from "./navigation/Tabs";
 const App = () => {
     return (
         <NavigationContainer>
+        
         <Tabs />
+
         </NavigationContainer>
     );
 }
