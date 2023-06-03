@@ -19,7 +19,7 @@ function Tabs() {
         tabBarHideOnKeyboard: true,
         tabBarStyle: {
           position: 'absolute',
-          bottom: 25,
+          bottom: 15,
           left: 20,
           right: 20,
           elevation: 0,
@@ -31,8 +31,7 @@ function Tabs() {
       }}
     >
 
-      <Tab.Screen name="help" component={Help}
-        options={{
+      <Tab.Screen name="help" component={Help} options={{
           tabBarIcon: ({ focused }) => (
             <View style={{ alignItems: 'center', justifyContent: 'center', top: 10 }}>
               <Image
@@ -41,10 +40,10 @@ function Tabs() {
                 style={{
                   width: 25,
                   height: 25,
-                  tintColor: focused ? 'red' : 'gray',
+                  tintColor: focused ? '#6590e0' : 'gray',
                 }}
               />
-              <Text style={{ color: focused ? 'red' : 'white' }}>Help</Text>
+              <Text style={{ color: focused ? '#6590e0' : 'white' }}>Help</Text>
             </View>
           ),
         }}
@@ -52,16 +51,15 @@ function Tabs() {
 
       <Tab.Screen name="Home" component={Home} options={{
         tabBarIcon: ({ focused }) => (
-          <View style={{ alignItems: "center", justifyContent: "center", top: 10 }}>
-            <Image source={require("../assets/home.png")}
+          <View style={{ alignItems: "center", justifyContent: "center", top: 10}}>
+            <Image source={require("../assets/gtrkTranslate.png")}
               resizeMode="contain"
               style={{
-                width: 25,
-                height: 25,
-                tintColor: focused ? "red" : "gray"
+                width: 45,
+                height: 30,
               }}
             />
-            <Text style={{ color: focused ? "red" : "white" }}>HOME</Text>
+            <Text style={{ color: focused ? "#6590e0" : "white"}}>Çevir</Text>
           </View>
         ),
       }} />
@@ -74,13 +72,14 @@ function Tabs() {
               style={{
                 width: 25,
                 height: 25,
-                tintColor: focused ? "red" : "gray"
+                tintColor: focused ? "#6590e0" : "gray"
               }}
             />
-            <Text style={{ color: focused ? "red" : "white" }}>INFO</Text>
+            <Text style={{ color: focused ? "#6590e0" : "white" }}>BİLGİ</Text>
           </View>
         ),
       }} />
+
     </Tab.Navigator>
   );
 }
