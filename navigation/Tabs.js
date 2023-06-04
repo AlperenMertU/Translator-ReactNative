@@ -19,8 +19,8 @@ function Tabs() {
         tabBarHideOnKeyboard: true,
         tabBarStyle: {
           position: 'absolute',
-          bottom: 15,
-          left: 20,
+          bottom: 30,
+          left: 100,
           right: 20,
           elevation: 0,
           backgroundColor: '#ffffff',
@@ -31,23 +31,6 @@ function Tabs() {
       }}
     >
 
-      <Tab.Screen name="help" component={Help} options={{
-          tabBarIcon: ({ focused }) => (
-            <View style={{ alignItems: 'center', justifyContent: 'center', top: 10 }}>
-              <Image
-                source={require('../assets/home.png')}
-                resizeMode="contain"
-                style={{
-                  width: 25,
-                  height: 25,
-                  tintColor: focused ? '#6590e0' : 'gray',
-                }}
-              />
-              <Text style={{ color: focused ? '#6590e0' : 'white' }}>Help</Text>
-            </View>
-          ),
-        }}
-      />
 
       <Tab.Screen name="Home" component={Home} options={{
         tabBarIcon: ({ focused }) => (

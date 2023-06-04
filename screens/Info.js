@@ -80,7 +80,7 @@ const Info = ({ navigation }) => {
 const styles = StyleSheet.create({
     container: {
         flex: 1,
-        paddingBottom:120,
+        paddingBottom: 120,
     },
     image1: {
         width: 240,
