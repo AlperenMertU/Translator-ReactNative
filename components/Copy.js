@@ -3,7 +3,7 @@ import React from 'react';
 import { View, StyleSheet, Text, TouchableOpacity } from 'react-native';
 
 const Copy = () => {
-  const [isOpen, setIsOpen] = useState(false);
+  const [isOpen, setIsOpen] = useState(true);
 
   const handlePress = () => {
     setIsOpen(!isOpen);
@@ -11,15 +11,16 @@ const Copy = () => {
   return (
     <View style={styles.container}>
       <TouchableOpacity onPress={handlePress} style={styles.open}>
-        <Text>Tıkla</Text>
+        <Text style={styles.plus}>+</Text>
       </TouchableOpacity>
   {
     isOpen
   && (
       <View style={styles.sections}>
-        <TouchableOpacity onPress={() => console.log('Kopyala')}>
+        <TouchableOpacity onPress={() => console.log('Kopyala')} style={styles.copy}>
           <Text>Kopyala</Text>
         </TouchableOpacity>
+
         <TouchableOpacity onPress={() => console.log('Saydam Kaydet')}>
           <Text>Saydam Kaydet</Text>
         </TouchableOpacity>
@@ -31,23 +32,26 @@ const Copy = () => {
 };
 const styles = StyleSheet.create({
   container:{
-   top:120,
-   left:25,
-  },
-  circle: {
-    alignItems: 'center',
-    textAlign: 'center',
-    borderRadius: 25,
-    width: 50,
-    height: 50,
-    backgroundColor: "red",
+    flex:1,
   },
   plus: {
-    top: -5,
+    textAlign:"center",
+    alignItems:"center",
     fontSize: 40,
+    bottom:5,
   },
   sections: {
     transform: [{translateY: -120}],
+    bottom:10,
+  },
+  sections: {
+    width:55,
+    transform: [{translateY: -120}],
+    bottom:10,
+  },
+  copy:{
+     bottom:5,
+
   }
 
 })
