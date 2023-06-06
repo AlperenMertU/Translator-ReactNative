@@ -1,11 +1,14 @@
-import React, { useState } from "react";
-import { StyleSheet, Text, View, TextInput, Image, Keyboard, TouchableOpacity } from 'react-native';
+import React, { useState, useRef } from "react";
+import { StyleSheet, Button, Text, View, TextInput, Image, Keyboard, TouchableOpacity } from 'react-native';
 import Copy from "../components/Copy";
-import * as Clipboard from 'expo-clipboard';
+
+import Deneme from "../components/Deneme";
+
 
 const Home = ({ navigation }) => {
 
-  
+  ///
+
   const [text, setText] = useState("");
 
   let exit = ""
@@ -194,16 +197,13 @@ const Home = ({ navigation }) => {
 
   }
 
-  const copyToClipboard = () => {
-    Clipboard.setStringAsync(exit);
-    alert('Metin panoya kopyalandı!');
-  };
-
 
   console.log(exit);
 
   return (
     <View style={styles.container}>
+  
+          <Deneme />
 
 
       <View style={styles.upperCase}>
@@ -227,16 +227,7 @@ const Home = ({ navigation }) => {
 
 
       <View style={styles.otherElementZ}>
-        <Copy />
-      </View>
-
-      <View style={{left:155, bottom:155}}>
-        <Text>Girilen Metin</Text>
-        <Text>...</Text>
-
-        <TouchableOpacity onPress={copyToClipboard}>
-          <Text>Kopyala</Text>
-        </TouchableOpacity>
+        <Copy exit={exit} />
       </View>
 
     </View>
