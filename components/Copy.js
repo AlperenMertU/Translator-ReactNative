@@ -2,14 +2,16 @@ import { useState } from 'react';
 import React, { useRef } from 'react';
 import { View, StyleSheet, Text, TouchableOpacity, Button } from 'react-native';
 import * as Clipboard from 'expo-clipboard';
+import * as MediaLibrary from 'expo-media-library';
+import * as Permissions from 'expo-permissions';
+import { captureRef } from 'react-native-view-shot';
 
 
 const Copy = (props) => {
 
 
-
-
-///
+console.log(props.saveTextAsImage);
+////
   const copyToClipboard = () => {
     Clipboard.setStringAsync(props.exit)
   };
@@ -20,6 +22,7 @@ const Copy = (props) => {
   const handlePress = () => {
     setIsOpen(!isOpen);
   };
+
   return (
     <View style={styles.container}>
     
@@ -29,17 +32,18 @@ const Copy = (props) => {
       {
         isOpen
         && (
+
           <View style={styles.sections}>
+
             <TouchableOpacity onPress={copyToClipboard} style={styles.copy}>
               <Text>Kopyala</Text>
             </TouchableOpacity>
 
-
-
             
-            <TouchableOpacity onPress={() => console.log('Saydam Kaydet')}>
+            <TouchableOpacity onPress={props.saveTextAsImage}>
               <Text>Saydam Kaydet</Text>
             </TouchableOpacity>
+
           </View>
 
         )}

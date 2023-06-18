@@ -1,14 +1,38 @@
 import React, { useState, useRef } from "react";
 import { StyleSheet, Button, Text, View, TextInput, Image, Keyboard, TouchableOpacity } from 'react-native';
 import Copy from "../components/Copy";
-
-import Deneme from "../components/Deneme";
+import * as MediaLibrary from 'expo-media-library';
+import * as Permissions from 'expo-permissions';
+import { captureRef } from 'react-native-view-shot';
 
 
 const Home = ({ navigation }) => {
+  const textRef = useRef(null);
+  const [title, setTitle] = useState('Merhaba, Dünya!');
 
-  ///
+  const saveTextAsImage = async () => {
+    const { status } = await Permissions.askAsync(Permissions.CAMERA_ROLL);
 
+    if (status !== 'granted') {
+      console.log('Erişim izni reddedildi');
+      return;
+    }
+
+    const uri = await captureRef(textRef.current, {
+      format: 'png',
+      quality: 1,
+    });
+
+    MediaLibrary.saveToLibraryAsync(uri)
+      .then(() => {
+        console.log('Resim kaydedildi!');
+      })
+      .catch((error) => {
+        console.log(error);
+      });
+  };
+
+  ////
   const [text, setText] = useState("");
 
   let exit = ""
@@ -197,13 +221,9 @@ const Home = ({ navigation }) => {
 
   }
 
-
-  console.log(exit);
-
   return (
     <View style={styles.container}>
   
-          <Deneme />
 
 
       <View style={styles.upperCase}>
@@ -211,6 +231,7 @@ const Home = ({ navigation }) => {
           onChangeText={(getText) => setText(getText)}
           defaulValue={text}
         />
+
       </View>
 
 
@@ -222,12 +243,12 @@ const Home = ({ navigation }) => {
       </View>
 
       <View style={styles.lowerCase}>
-        <TextInput style={styles.output} placeholder='𐰓𐰭𐰢𐰀' value={exit} />
+        <Text style={styles.output} value={exit} ref={textRef} >{exit}</Text>
       </View>
 
 
       <View style={styles.otherElementZ}>
-        <Copy exit={exit} />
+        <Copy exit={exit} saveTextAsImage={saveTextAsImage}/>
       </View>
 
     </View>
@@ -270,6 +291,7 @@ const styles = StyleSheet.create({
     marginLeft: 22,
   },
   output: {
+    color:"red",
     fontSize: 25,
     marginTop: 35,
     marginRight: 22,
