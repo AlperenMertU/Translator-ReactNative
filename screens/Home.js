@@ -6,7 +6,9 @@ import * as Permissions from 'expo-permissions';
 import { captureRef } from 'react-native-view-shot';
 
 
+
 const Home = ({ navigation }) => {
+
   const textRef = useRef(null);
   const [title, setTitle] = useState('Merhaba, Dünya!');
 
@@ -235,15 +237,19 @@ const Home = ({ navigation }) => {
       </View>
 
 
-      <View style={styles.wolfHead}>
-        <Image
-          style={styles.img}
-          source={require("../assets/wolfhead.png")}
-        />
-      </View>
+  
 
       <View style={styles.lowerCase}>
+
+      <View style={styles.wolfHead}>
+      <Image
+        style={styles.img}
+        source={require("../assets/wolfhead.png")}
+      />
+    </View>
+
         <Text style={styles.output} value={exit} ref={textRef} >{exit}</Text>
+
       </View>
 
 
@@ -257,39 +263,47 @@ const Home = ({ navigation }) => {
 
 const styles = StyleSheet.create({
   container: {
-    flex: 1,
+      width: "100%",
+      height: "100%",
   },
+
   upperCase: {
+    flex:1,
     width: "100%",
     height: 488,
     backgroundColor: "#6590e0",
   },
   lowerCase: {
+    flex: 1,
     position: "absolute",
     width: "100%",
-    height: 480,
+    height:"55%",
+    top:400,
     backgroundColor: "white",
     borderRadius: 20,
-    marginTop: 320,
   },
+
   wolfHead: {
+    flex:1,
     zIndex: 99,
-    width: 200,
-    height: 100,
     position: "absolute",
+    flex:1,
+    bottom: "90%",
+    left: "41%",
   },
+
   img: {
-    transform: [{ translateY: 230 }, { translateX: 68 }],
-    top: "50%",
-    left: "50%",
+    flex:1,
     width: 70,
     height: 70,
   },
+  
   input: {
     fontSize: 25,
     marginTop: 35,
     marginLeft: 22,
   },
+
   output: {
     color:"red",
     fontSize: 25,
@@ -299,7 +313,7 @@ const styles = StyleSheet.create({
 
   otherElementZ: {
     borderRadius: 25,
-    top: 105,
+    top: -30,
     backgroundColor: "#6590e0",
     width: 50,
     height: 50,

@@ -19,7 +19,7 @@ function Tabs() {
         tabBarHideOnKeyboard: true,
         tabBarStyle: {
           position: 'absolute',
-          bottom: 30,
+          bottom: 20,
           left: 100,
           right: 20,
           elevation: 0,
