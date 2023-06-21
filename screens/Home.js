@@ -225,37 +225,30 @@ const Home = ({ navigation }) => {
 
   return (
     <View style={styles.container}>
-  
+      <View style={styles.inAndOut}>
 
+        <View style={styles.upperSection}>
+          <TextInput style={styles.input} placeholder='Metin girin'
+            onChangeText={(getText) => setText(getText)}
+            defaulValue={text}
+          />
+        </View>
 
-      <View style={styles.upperCase}>
-        <TextInput style={styles.input} placeholder='Metin girin'
-          onChangeText={(getText) => setText(getText)}
-          defaulValue={text}
-        />
+        <View style={styles.lowerSection}>
 
-      </View>
+          <View style={styles.logo}>
+            <Image style={styles.img} source={require("../assets/wolfhead.png")} />
+          </View>
 
+          <Text style={styles.output} value={exit} ref={textRef} >{exit}</Text>
 
-  
-
-      <View style={styles.lowerCase}>
-
-      <View style={styles.wolfHead}>
-      <Image
-        style={styles.img}
-        source={require("../assets/wolfhead.png")}
-      />
-    </View>
-
-        <Text style={styles.output} value={exit} ref={textRef} >{exit}</Text>
+        </View>
 
       </View>
 
-
-      <View style={styles.otherElementZ}>
-        <Copy exit={exit} saveTextAsImage={saveTextAsImage}/>
-      </View>
+       <View style={styles.circle}>
+       <Copy exit={exit} saveTextAsImage={saveTextAsImage}/>  
+       </View>
 
     </View>
   );
@@ -263,63 +256,55 @@ const Home = ({ navigation }) => {
 
 const styles = StyleSheet.create({
   container: {
-      width: "100%",
-      height: "100%",
-  },
-
-  upperCase: {
-    flex:1,
     width: "100%",
-    height: 488,
+    height: "100%",
     backgroundColor: "#6590e0",
   },
-  lowerCase: {
-    flex: 1,
-    position: "absolute",
+  inAndOut: {
+
+  },
+  upperSection: {
     width: "100%",
-    height:"55%",
-    top:400,
+    height: "50%",
+    backgroundColor:  "#6590e0",
+  },
+  lowerSection: {
+    width: "100%",
+    height: "55%",
     backgroundColor: "white",
-    borderRadius: 20,
-  },
-
-  wolfHead: {
-    flex:1,
-    zIndex: 99,
-    position: "absolute",
-    flex:1,
-    bottom: "90%",
-    left: "41%",
-  },
-
-  img: {
-    flex:1,
-    width: 70,
-    height: 70,
-  },
-  
-  input: {
-    fontSize: 25,
-    marginTop: 35,
-    marginLeft: 22,
-  },
-
-  output: {
-    color:"red",
-    fontSize: 25,
-    marginTop: 35,
-    marginRight: 22,
-  },
-
-  otherElementZ: {
     borderRadius: 25,
-    top: -30,
-    backgroundColor: "#6590e0",
-    width: 50,
-    height: 50,
-    left: 20,
   },
+  logo: {
+     position:"relative",
+     bottom:30,
+     left:174,
 
+  },
+  img: {
+    width:50,
+    height:50,
+ },
+ input:{
+  fontSize: 25,
+  marginTop: 35,
+  marginLeft: 22,
+ },
+ output:{
+  fontSize: 25,
+  bottom:30,
+  left:-5,
+  color:"red",
+ },
+ circle:{
+  flex:1,
+  position:"absolute",
+  borderRadius: 25,
+  bottom:35,
+  backgroundColor: "#6590e0",
+  width: 55,
+  height:55,
+  left: 20,
+ }
 });
 
 

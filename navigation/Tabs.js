@@ -42,7 +42,7 @@ function Tabs() {
                 height: 30,
               }}
             />
-            <Text style={{ color: focused ? "#6590e0" : "white"}}>Çevir</Text>
+            <Text style={{ color: focused ? "#6590e0" : "white"}}>ÇEVİR</Text>
           </View>
         ),
       }} />

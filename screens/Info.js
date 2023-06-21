@@ -1,8 +1,11 @@
 import React from 'react';
-import { View, StyleSheet, Text, Button, Image, ScrollView, Span } from 'react-native';
+import { View, StyleSheet, Text, Button, Image, ScrollView,Linking } from 'react-native';
 
 const Info = ({ navigation }) => {
+  let  openLink = () => {
+    Linking.openURL('https://www.linkedin.com/in/alperen-mert-urdoğan-5b3284204/');
 
+  }
     return (
         <View style={styles.container}>
             <ScrollView>
@@ -73,6 +76,9 @@ const Info = ({ navigation }) => {
 
                 </View>
             </ScrollView>
+            <View style={styles.contact}>
+             <Text style={styles.text} onPress={openLink} numberOfLines={2}>iletişim için tıklayın</Text> 
+            </View>
         </View>
     );
 }
@@ -114,6 +120,17 @@ const styles = StyleSheet.create({
         padding:10,
         margin:10,
     },
-})
+    contact:{
+        
+    },
+    text:{
+        opacity:0.2,
+        position:"absolute",
+        fontSize:15,
+         width:75,
+         left:10,
+         top:20,
+    }
+ })
 
 export default Info;
