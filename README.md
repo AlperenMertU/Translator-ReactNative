@@ -3,11 +3,11 @@
 This Program translates the Latin alphabet to the Turk alphabet (Gokturk alphabet), taking into account features unique to the Turk (Gokturk) alphabet and such as "Büyük Ünlü Uyumu" in Turkish.
 -maybe it can be published on google play-
 ## Video in Demo
-
+https://github.com/AlperenMertU/Translator-ReactNative/assets/89020497/a3a9c506-a60f-4066-a703-942ac72d8bb0
 ## Image in Demo
 1
-<img src="inAppPhoto3.jpeg" alt="app" width="295" height="550" />
+<img src="inAppPhoto3.jpeg" alt="app" width="290" height="560" />
 2
-<img src="inAppPhoto2.jpeg" alt="app" width="295" height="550" />
+<img src="inAppPhoto2.jpeg" alt="app" width="290" height="560" />
 3
-<img src="inAppPhoto1.jpeg" alt="app" width="295" height="550" />
+<img src="inAppPhoto1.jpeg" alt="app" width="290" height="560" />
